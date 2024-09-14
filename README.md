@@ -3,5 +3,5 @@ Introducing, I am a junior Front-end Web Developer from Padang City, West Sumatr
 
 <p>
      <img src="https://github-readme-stats.vercel.app/api?username=ardianto29&hide=contribs,prs&show_icons=true&hide_border=true&count_private=true&custom_title=ardianto29%27s%20GitHub%20Stats&theme=discord_old_blurple" />
-     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ardianto29&layout=compact&custom_title=ardianto29%27s%20GitHub%20Stats&theme=discord_old_blurple" height=180 />
+     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ardianto29&layout=compact&hide_border=true&custom_title=ardianto29%27s%20GitHub%20Stats&theme=discord_old_blurple" height=180 />
 </p>
