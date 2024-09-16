@@ -1,4 +1,4 @@
-# Hello 👋, I'm Ardianto Ramadhan 
+# Hello 👋, I'm Ardianto Tri Ramadhan 
 Introducing, I am a junior Front-end Web Developer from Padang City, West Sumatra, Indonesia. For 1+ years, I have been continuously learning in the field of front-end and experimenting with new technologies and frameworks, and here you can see a summary of my skills. Field of front-end and experimenting with new technologies.
 
 <p>
