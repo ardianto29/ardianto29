@@ -65,9 +65,9 @@ def fetch_stats():
       user(login: "{USER}") {{
         id
         followers {{ totalCount }}
-        repositories(first: 100, ownerAffiliations: OWNER) {{
+        repositories(first: 100, ownerAffiliations: [OWNER, ORGANIZATION_MEMBER]) {{
           totalCount
-          nodes {{ name stargazerCount isFork }}
+          nodes {{ name isFork stargazerCount owner {{ login }} }}
         }}
         repositoriesContributedTo(first: 1, contributionTypes: [COMMIT, PULL_REQUEST, REPOSITORY]) {{
           totalCount
@@ -81,7 +81,8 @@ def fetch_stats():
         "stars": sum(n["stargazerCount"] for n in u["repositories"]["nodes"]),
         "commits": commits,
     }
-    stats.update(loc([n["name"] for n in u["repositories"]["nodes"] if not n["isFork"]], u["id"]))
+    repos = [(n["owner"]["login"], n["name"]) for n in u["repositories"]["nodes"] if not n["isFork"]]
+    stats.update(loc(repos, u["id"]))
     return stats
 
 
@@ -98,14 +99,14 @@ query($owner: String!, $name: String!, $id: ID!, $cursor: String) {
 }"""
 
 
-def loc(repo_names, user_id):
+def loc(repos, user_id):
     # Actions token can't see stats/contributors REST (202 forever); walk commits via GraphQL instead
     add = rem = 0
-    for name in repo_names:
+    for owner, name in repos:
         cursor = None
         try:
             while True:
-                ref = graphql(LOC_QUERY, {"owner": USER, "name": name, "id": user_id, "cursor": cursor}, token=PRIV_TOKEN)["repository"]["defaultBranchRef"]
+                ref = graphql(LOC_QUERY, {"owner": owner, "name": name, "id": user_id, "cursor": cursor}, token=PRIV_TOKEN)["repository"]["defaultBranchRef"]
                 if ref is None:
                     break  # empty repo
                 h = ref["target"]["history"]
@@ -115,7 +116,7 @@ def loc(repo_names, user_id):
                     break
                 cursor = h["pageInfo"]["endCursor"]
         except Exception as e:
-            print(f"loc {name}: {e}")
+            print(f"loc {owner}/{name}: {e}")
     return {"loc_add": add, "loc_del": rem, "loc": add - rem}
 
 
@@ -159,6 +160,7 @@ def info_lines(s):
         kv("LinkedIn", "in/ardianto-tri-ramadhan"),
         [],
         rule("GitHub Stats"),
+        kv("Member since", str(JOINED_YEAR)),
         kv("Repos", f"{s['repos']} {{Contributed: {s['contributed']}}}"),
         kv("Commits", n(s["commits"])),
         [("Lines of Code: ", "k"), (n(s["loc"]), "v"), (" ( ", "d"),
@@ -170,10 +172,10 @@ def render(mode, stats):
     p = PALETTES[mode]
     text_x = 25
     out = [
-        '<svg xmlns="http://www.w3.org/2000/svg" width="750" height="485" viewBox="0 0 750 485" '
+        '<svg xmlns="http://www.w3.org/2000/svg" width="750" height="505" viewBox="0 0 750 505" '
         'preserveAspectRatio="none" '
         f'font-family="Consolas, Menlo, monospace" font-size="13px">',
-        f'<rect x="0.5" y="0.5" width="749" height="484" rx="10" fill="{p["bg"]}" stroke="{p["border"]}"/>',
+        f'<rect x="0.5" y="0.5" width="749" height="504" rx="10" fill="{p["bg"]}" stroke="{p["border"]}"/>',
     ]
     for i, line in enumerate(ART.strip("\n").split("\n")):
         if line:
