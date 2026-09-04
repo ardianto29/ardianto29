@@ -12,7 +12,7 @@ from datetime import date, datetime, timezone
 USER = "ardianto29"
 BIRTHDAY = date(2002, 11, 29)
 JOINED_YEAR = 2019  # account creation year, never changes
-W = 56  # info column width in characters
+W = 90  # info column width in characters
 
 ART = ""
 
@@ -133,8 +133,8 @@ def kv(key, val, width=W):
 
 
 def kv2(k1, v1, k2, v2):
-    left = kv(k1, v1, 30)
-    return left + [(" | ", "d")] + kv(k2, v2, 23)
+    left = kv(k1, v1, 48)
+    return left + [(" | ", "d")] + kv(k2, v2, 39)
 
 
 def rule(title=""):
@@ -176,9 +176,9 @@ def render(mode, stats):
     p = PALETTES[mode]
     text_x = 25
     out = [
-        '<svg xmlns="http://www.w3.org/2000/svg" width="540" height="500" viewBox="0 0 540 500" '
+        '<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" '
         f'font-family="Consolas, Menlo, monospace" font-size="13px">',
-        f'<rect x="0.5" y="0.5" width="539" height="499" rx="10" fill="{p["bg"]}" stroke="{p["border"]}"/>',
+        f'<rect x="0.5" y="0.5" width="899" height="499" rx="10" fill="{p["bg"]}" stroke="{p["border"]}"/>',
     ]
     for i, line in enumerate(ART.strip("\n").split("\n")):
         if line:
