@@ -148,7 +148,7 @@ def info_lines(s):
         kv("Uptime", f"{y} years, {m} months, {d} days"),
         kv("Host", "Padang, West Sumatra"),
         kv("Kernel", "Web & Software Development"),
-        kv("IDE", "VS Code, Claude Code"),
+        kv("IDE", "VS Code, Claude Code, Cursor, Antigravity"),
         [],
         kv("Languages.Programming", "JavaScript, TypeScript, Python, PHP"),
         kv("Frameworks", "Laravel, Next.js, SolidJS, React + Vite"),
