@@ -177,6 +177,7 @@ def render(mode, stats):
     text_x = 25
     out = [
         '<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" '
+        'preserveAspectRatio="none" '
         f'font-family="Consolas, Menlo, monospace" font-size="13px">',
         f'<rect x="0.5" y="0.5" width="899" height="499" rx="10" fill="{p["bg"]}" stroke="{p["border"]}"/>',
     ]
