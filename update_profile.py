@@ -14,31 +14,7 @@ BIRTHDAY = date(2002, 11, 29)
 JOINED_YEAR = 2019  # account creation year, never changes
 W = 56  # info column width in characters
 
-ART = r"""
-              _yag$  @@P~    *y_
-          _y  @@@@@           `~F
-         g@@ 4@@@~  @@@@@gy_
-        g@@@La@@@  y@@@@@@@@,
-    y@@.@@@@@@@@@w @F=_~@F5F[           ^_
-    7@@@@@@@@@@@@g$@@@@@@@@@b   g@@      ~g
-    $@@@@@@@@@@@@$_@@@@@@@@@F  y@@@      `@$
-    ~FF~g@@`@@_ 4$"@@@@@$@@F  $@@@@      :@@$
-    ygg@@@@,4@@$ $_"4@@@@@F  g@@@@^       4@@L
-   d@@@@@@@F`$@~ ?@g_ `yg@L 4@@@@@        `@@$
-  4@@@@@@@_yg`.   ^@@@g@@@@ "@@@@@         @@@
-  `@@@@@@5@@@P+ .  4@@@g@aRgg@@@@@         s@@
-.  "5@R~g@MRR:` `:  $@@"4 $7@@@@@@g_        7@
-    gF  "'`'``: `:  ^@$ JL?E$@@@@@@@,        ~
- yg@F                $@ "$ `4@@@@@@@F
- 4@@~                4@  $ : $@@@@@@'
-  4@                  @  4L  $@@@@@F'
-   4L                 9L  F \4@@@@M"     .
-                      4L  " `W@@P~     _y`
-                       F     4@F     :g~`
-                       [      L    .: `
-                       '      ]
-                           a   '
-"""
+ART = ""
 
 # ACCESS_TOKEN (PAT) sees private repos/LOC; GITHUB_TOKEN is the fallback
 TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("ACCESS_TOKEN") or ""
@@ -198,18 +174,20 @@ def info_lines(s):
 
 def render(mode, stats):
     p = PALETTES[mode]
+    text_x = 25
     out = [
-        '<svg xmlns="http://www.w3.org/2000/svg" width="840" height="500" viewBox="0 0 840 500" '
+        '<svg xmlns="http://www.w3.org/2000/svg" width="540" height="500" viewBox="0 0 540 500" '
         f'font-family="Consolas, Menlo, monospace" font-size="13px">',
-        f'<rect x="0.5" y="0.5" width="839" height="499" rx="10" fill="{p["bg"]}" stroke="{p["border"]}"/>',
+        f'<rect x="0.5" y="0.5" width="539" height="499" rx="10" fill="{p["bg"]}" stroke="{p["border"]}"/>',
     ]
     for i, line in enumerate(ART.strip("\n").split("\n")):
-        out.append(f'<text x="25" y="{40 + i * 15}" fill="{p["art"]}" xml:space="preserve">{html.escape(line)}</text>')
+        if line:
+            out.append(f'<text x="{text_x}" y="{40 + i * 15}" fill="{p["art"]}" xml:space="preserve">{html.escape(line)}</text>')
     for i, segs in enumerate(info_lines(stats)):
         if not segs:
             continue
         spans = "".join(f'<tspan fill="{p[c]}">{html.escape(t)}</tspan>' for t, c in segs)
-        out.append(f'<text x="390" y="{45 + i * 21}" xml:space="preserve">{spans}</text>')
+        out.append(f'<text x="{text_x}" y="{45 + i * 21}" xml:space="preserve">{spans}</text>')
     out.append("</svg>")
     return "\n".join(out)
 
