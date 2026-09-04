@@ -65,7 +65,7 @@ def fetch_stats():
       user(login: "{USER}") {{
         id
         followers {{ totalCount }}
-        repositories(first: 100, ownerAffiliations: [OWNER, ORGANIZATION_MEMBER]) {{
+        repositories(first: 100, ownerAffiliations: [OWNER, ORGANIZATION_MEMBER, COLLABORATOR]) {{
           totalCount
           nodes {{ name isFork stargazerCount owner {{ login }} }}
         }}
