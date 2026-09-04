@@ -1,4 +1,6 @@
-<img src="https://avatars.githubusercontent.com/u/56662573?v=4" width="120" alt="Ardianto Tri Ramadhan"/>
+<p align="center">
+  <img src="avatar.png" width="150" alt="Ardianto Tri Ramadhan"/>
+</p>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg">
