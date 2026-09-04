@@ -150,7 +150,7 @@ def info_lines(s):
         kv("IDE", "VS Code, Claude Code"),
         [],
         kv("Languages.Programming", "JavaScript, TypeScript, Python, PHP"),
-        kv("Frameworks", "Laravel"),
+        kv("Frameworks", "Laravel, Next.js, SolidJS, React + Vite"),
         kv("Languages.Real", "Indonesian, English"),
         kv("Hobbies", "Reading"),
         [],
