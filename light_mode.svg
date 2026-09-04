@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="750" height="485" viewBox="0 0 750 485" preserveAspectRatio="none" font-family="Consolas, Menlo, monospace" font-size="13px">
-<rect x="0.5" y="0.5" width="749" height="484" rx="10" fill="#ffffff" stroke="#d0d7de"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="505" viewBox="0 0 750 505" preserveAspectRatio="none" font-family="Consolas, Menlo, monospace" font-size="13px">
+<rect x="0.5" y="0.5" width="749" height="504" rx="10" fill="#ffffff" stroke="#d0d7de"/>
 <text x="25" y="45" xml:space="preserve"><tspan fill="#0969da">ardianto29@github </tspan><tspan fill="#afb8c1">────────────────────────────────────────────────────────────────────────</tspan></text>
 <text x="25" y="87" xml:space="preserve"><tspan fill="#953800">OS: </tspan><tspan fill="#afb8c1">....................................................................... </tspan><tspan fill="#24292f">Windows, Linux</tspan></text>
-<text x="25" y="108" xml:space="preserve"><tspan fill="#953800">Uptime: </tspan><tspan fill="#afb8c1">....................................................... </tspan><tspan fill="#24292f">23 years, 9 months, 6 days</tspan></text>
+<text x="25" y="108" xml:space="preserve"><tspan fill="#953800">Uptime: </tspan><tspan fill="#afb8c1">....................................................... </tspan><tspan fill="#24292f">23 years, 9 months, 7 days</tspan></text>
 <text x="25" y="129" xml:space="preserve"><tspan fill="#953800">Host: </tspan><tspan fill="#afb8c1">............................................................... </tspan><tspan fill="#24292f">Padang, West Sumatra</tspan></text>
 <text x="25" y="150" xml:space="preserve"><tspan fill="#953800">Kernel: </tspan><tspan fill="#afb8c1">....................................................... </tspan><tspan fill="#24292f">Web &amp; Software Development</tspan></text>
 <text x="25" y="171" xml:space="preserve"><tspan fill="#953800">IDE: </tspan><tspan fill="#afb8c1">................................................................ </tspan><tspan fill="#24292f">VS Code, Claude Code</tspan></text>
@@ -14,7 +14,8 @@
 <text x="25" y="339" xml:space="preserve"><tspan fill="#953800">Email: </tspan><tspan fill="#afb8c1">...................................................... </tspan><tspan fill="#24292f">ardiantoramadhan83@gmail.com</tspan></text>
 <text x="25" y="360" xml:space="preserve"><tspan fill="#953800">LinkedIn: </tspan><tspan fill="#afb8c1">....................................................... </tspan><tspan fill="#24292f">in/ardianto-tri-ramadhan</tspan></text>
 <text x="25" y="402" xml:space="preserve"><tspan fill="#0969da">─ GitHub Stats </tspan><tspan fill="#afb8c1">───────────────────────────────────────────────────────────────────────────</tspan></text>
-<text x="25" y="423" xml:space="preserve"><tspan fill="#953800">Repos: </tspan><tspan fill="#afb8c1">............................................................... </tspan><tspan fill="#24292f">15 {Contributed: 3}</tspan></text>
-<text x="25" y="444" xml:space="preserve"><tspan fill="#953800">Commits: </tspan><tspan fill="#afb8c1">.......................................................................... </tspan><tspan fill="#24292f">16,065</tspan></text>
-<text x="25" y="465" xml:space="preserve"><tspan fill="#953800">Lines of Code: </tspan><tspan fill="#24292f">87,230</tspan><tspan fill="#afb8c1"> ( </tspan><tspan fill="#1a7f37">98,466++</tspan><tspan fill="#afb8c1">, </tspan><tspan fill="#cf222e">11,236--</tspan><tspan fill="#afb8c1"> )</tspan></text>
+<text x="25" y="423" xml:space="preserve"><tspan fill="#953800">Member since: </tspan><tspan fill="#afb8c1">....................................................................... </tspan><tspan fill="#24292f">2019</tspan></text>
+<text x="25" y="444" xml:space="preserve"><tspan fill="#953800">Repos: </tspan><tspan fill="#afb8c1">............................................................... </tspan><tspan fill="#24292f">15 {Contributed: 3}</tspan></text>
+<text x="25" y="465" xml:space="preserve"><tspan fill="#953800">Commits: </tspan><tspan fill="#afb8c1">.......................................................................... </tspan><tspan fill="#24292f">16,065</tspan></text>
+<text x="25" y="486" xml:space="preserve"><tspan fill="#953800">Lines of Code: </tspan><tspan fill="#24292f">87,230</tspan><tspan fill="#afb8c1"> ( </tspan><tspan fill="#1a7f37">98,466++</tspan><tspan fill="#afb8c1">, </tspan><tspan fill="#cf222e">11,236--</tspan><tspan fill="#afb8c1"> )</tspan></text>
 </svg>
