@@ -132,11 +132,6 @@ def kv(key, val, width=W):
     return [(f"{key}: ", "k"), (dots + " ", "d"), (str(val), "v")]
 
 
-def kv2(k1, v1, k2, v2):
-    left = kv(k1, v1, 48)
-    return left + [(" | ", "d")] + kv(k2, v2, 39)
-
-
 def rule(title=""):
     label = f"─ {title} " if title else ""
     return [(label, "h"), ("─" * (W - len(label)), "d")]
@@ -162,11 +157,10 @@ def info_lines(s):
         rule("Contact"),
         kv("Email", "ardiantoramadhan83@gmail.com"),
         kv("LinkedIn", "in/ardianto-tri-ramadhan"),
-        kv("GitHub", f"github.com/{USER}"),
         [],
         rule("GitHub Stats"),
-        kv2("Repos", f"{s['repos']} {{Contributed: {s['contributed']}}}", "Stars", n(s["stars"])),
-        kv2("Commits", n(s["commits"]), "Followers", n(s["followers"])),
+        kv("Repos", f"{s['repos']} {{Contributed: {s['contributed']}}}"),
+        kv("Commits", n(s["commits"])),
         [("Lines of Code: ", "k"), (n(s["loc"]), "v"), (" ( ", "d"),
          (n(s["loc_add"]) + "++", "g"), (", ", "d"), (n(s["loc_del"]) + "--", "r"), (" )", "d")],
     ]
@@ -176,10 +170,10 @@ def render(mode, stats):
     p = PALETTES[mode]
     text_x = 25
     out = [
-        '<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" '
+        '<svg xmlns="http://www.w3.org/2000/svg" width="750" height="485" viewBox="0 0 750 485" '
         'preserveAspectRatio="none" '
         f'font-family="Consolas, Menlo, monospace" font-size="13px">',
-        f'<rect x="0.5" y="0.5" width="899" height="499" rx="10" fill="{p["bg"]}" stroke="{p["border"]}"/>',
+        f'<rect x="0.5" y="0.5" width="749" height="484" rx="10" fill="{p["bg"]}" stroke="{p["border"]}"/>',
     ]
     for i, line in enumerate(ART.strip("\n").split("\n")):
         if line:
