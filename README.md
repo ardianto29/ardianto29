@@ -1,5 +1,5 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ardianto29/ardianto29/main/dark_mode.svg?v=1804">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ardianto29/ardianto29/main/light_mode.svg?v=1804">
-  <img alt="Ardianto Tri Ramadhan's GitHub profile" src="https://raw.githubusercontent.com/ardianto29/ardianto29/main/dark_mode.svg?v=1804" width="100%" height="505">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ardianto29/ardianto29/main/dark_mode.svg?v=1805">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ardianto29/ardianto29/main/light_mode.svg?v=1805">
+  <img alt="Ardianto Tri Ramadhan's GitHub profile" src="https://raw.githubusercontent.com/ardianto29/ardianto29/main/dark_mode.svg?v=1805" width="100%" height="505">
 </picture>
